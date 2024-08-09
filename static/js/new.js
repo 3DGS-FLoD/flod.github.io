@@ -55,4 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
     new BeforeAfter({ id: 'example12' });
     new BeforeAfter({ id: 'example13' });
   });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sliders = document.querySelectorAll('.comparison-slider');
+  
+    sliders.forEach(function(slider) {
+      const range = slider.querySelector('.slider');
+      const overlay = slider.querySelector('.comparison-overlay');
+  
+      range.addEventListener('input', function() {
+        overlay.style.width = `${this.value}%`;
+      });
+    });
+  });
   
