@@ -387,3 +387,40 @@ body {
   border-radius: 10px;
   margin: 5px;
 }
+
+/* Style the buttons that are used to open the tab content */
+.nav-item {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  background-color: inherit;
+  float: left;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  transition: 0.0s;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* Change background color of buttons on hover */
+.nav-item:hover {
+  background-color: #c7dc94;
+}
+
+/* Create an active/current tablink class */
+.nav-tabs .nav-link.active {
+  background-color: #5c7f17;
+  color:white;
+  font-weight: 500;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
