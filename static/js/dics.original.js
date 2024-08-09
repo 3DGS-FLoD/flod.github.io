@@ -17,12 +17,12 @@
 let defaultOptions = {
     container: null, // **REQUIRED**: HTML container | `document.querySelector('.b-dics')` |
     filters: null, // Array of CSS string filters  |`['blur(3px)', 'grayscale(1)', 'sepia(1)', 'saturate(3)']` |
-    hideTexts: true, // Show text only when you hover the image container |`true`,`false`|
-    textPosition: "center", // Set the prefer text position  |`'center'`,`'top'`, `'right'`, `'bottom'`, `'left'` |
+    hideTexts: false, // Show text only when you hover the image container |`true`,`false`|
+    textPosition: "bottom", // Set the prefer text position  |`'center'`,`'top'`, `'right'`, `'bottom'`, `'left'` |
     linesOrientation: "horizontal", // Change the orientation of lines  |`'horizontal'`,`'vertical'` |
     rotate: 0, // Rotate the image container (not too useful but it's a beatiful effect. String of rotate CSS rule)  |`'45deg'`|
-    arrayBackgroundColorText: null, // Change the bacground-color of sections texts with an array |`['#000000', '#FFFFFF']`|
-    arrayColorText: null, // Change the color of texts with an array  |`['#FFFFFF', '#000000']`|
+    arrayBackgroundColorText: "#000000", // Change the bacground-color of sections texts with an array |`['#000000', '#FFFFFF']`|
+    arrayColorText: '#FFFFFF', // Change the color of texts with an array  |`['#FFFFFF', '#000000']`|
     linesColor: null // Change the lines and arrows color  |`'rgb(0,0,0)'`|
   
   };
