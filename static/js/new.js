@@ -38,22 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
       this.handle.style.left = position + '%';
       this.before.style.width = position + '%';
     };
-  
-    // 여러 슬라이더를 초기화합니다.
-    new BeforeAfter({ id: 'example1' });
-    new BeforeAfter({ id: 'example2' });
-    new BeforeAfter({ id: 'example3' });
-    new BeforeAfter({ id: 'example4' });
-    
-    new BeforeAfter({ id: 'example5' });
-    new BeforeAfter({ id: 'example6' });
-    new BeforeAfter({ id: 'example7' });
-    new BeforeAfter({ id: 'example8' });
-
-    new BeforeAfter({ id: 'example10' });
-    new BeforeAfter({ id: 'example11' });
-    new BeforeAfter({ id: 'example12' });
-    new BeforeAfter({ id: 'example13' });
   });
 
 
