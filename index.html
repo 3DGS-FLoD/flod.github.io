@@ -306,7 +306,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <iframe src="./static/images/method.pdf" type="application/pdf" width="100%"></iframe>
+          <iframe src="./static/images/method.pdf" type="application/pdf" width="100%" height="100%"></iframe>
 
           <p>
             Training starts at level 1 with the given SfM points and proceeds to the maximum level. 
@@ -505,23 +505,31 @@
 
 
 
-<!-- test -->
+<!-- test - Level5 vs Level{5,4,3} -->
 <section class="section">
   <div class="container ">
     <div class="has-text-centered">
-      <h2 class="title is-3">test</h2>
+      <h2 class="title is-3">test - Level5 vs Level{5,4,3}</h2>
       <div class="content has-text-justified">
         <p></p>
       </div>
       <div class="columns is-centered">
+
         <div class="column">
           <div class="content">
             <div class="columns is-centered">
               <div class="column is-full-width">
                 <div class="comparison-slider">
-                  <div class="b-dics" style="width: 590px">
+                  <div class="b-dics">
                     <img src="./static/images/high_levels/train_level5.png" alt="Level5">
                     <img src="./static/images/high_levels/train_level543.png" alt="Level{5,4,3}">
+                  </div>
+                </div>
+
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/high_levels/9df87_level5.png" alt="Level5">
+                    <img src="./static/images/high_levels/9df87_level543.png" alt="Level{5,4,3}">
                   </div>
                 </div>
               </div>
@@ -529,11 +537,93 @@
           </div>
         </div>
 
-        <!-- Add more sliders as needed, similar to the one above -->
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/high_levels/stump_level5.png" alt="Level5">
+                    <img src="./static/images/high_levels/stump_level543.png" alt="Level{5,4,3}">
+                  </div>
+                </div>
+
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/high_levels/garden_level5.png" alt="Level5">
+                    <img src="./static/images/high_levels/garden_level543.png" alt="Level{5,4,3}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+
+<!-- tes - Vis Comparison -->
+<section class="section">
+  <div class="container ">
+    <div class="has-text-centered">
+      <h2 class="title is-3">test - Vis Comparison</h2>
+      <div class="content has-text-justified">
+        <p></p>
+      </div>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/vis_level5/train_3dgs.png" alt="3DGS">
+                    <img src="./static/images/vis_level5/train_level5.png" alt="Ours">
+                  </div>
+                </div>
+
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/vis_level5/9f518d_mip.png" alt="Mip-Splattng">
+                    <img src="./static/images/vis_level5/9f518d_level5.png" alt="Ours">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/vis_level5/aeb335_scaffold.png" alt="Scaffold-GS">
+                    <img src="./static/images/vis_level5/aeb335_level5.png" alt="Ours">
+                  </div>
+                </div>
+
+                <div class="comparison-slider">
+                  <div class="b-dics">
+                    <img src="./static/images/vis_level5/kitchen_octree.png" alt="Octree-GS">
+                    <img src="./static/images/vis_level5/kitchen_level5.png" alt="Ours">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
