@@ -306,7 +306,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <iframe src="./static/images/method.pdf" type="application/pdf" width="100%" height="100%"></iframe>
+          <img src="./static/images/method.png">
 
           <p>
             Training starts at level 1 with the given SfM points and proceeds to the maximum level. 
@@ -519,14 +519,14 @@
           <div class="content">
             <div class="columns is-centered">
               <div class="column is-full-width">
-                <div class="comparison-slider">
+                <div id="high1" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/high_levels/train_level5.png" alt="Level5">
                     <img src="./static/images/high_levels/train_level543.png" alt="Level{5,4,3}">
                   </div>
                 </div>
 
-                <div class="comparison-slider">
+                <div id="high2" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/high_levels/9df87_level5.png" alt="Level5">
                     <img src="./static/images/high_levels/9df87_level543.png" alt="Level{5,4,3}">
@@ -541,14 +541,14 @@
           <div class="content">
             <div class="columns is-centered">
               <div class="column is-full-width">
-                <div class="comparison-slider">
+                <div id="high3" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/high_levels/stump_level5.png" alt="Level5">
                     <img src="./static/images/high_levels/stump_level543.png" alt="Level{5,4,3}">
                   </div>
                 </div>
 
-                <div class="comparison-slider">
+                <div id="high4" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/high_levels/garden_level5.png" alt="Level5">
                     <img src="./static/images/high_levels/garden_level543.png" alt="Level{5,4,3}">
@@ -579,14 +579,14 @@
           <div class="content">
             <div class="columns is-centered">
               <div class="column is-full-width">
-                <div class="comparison-slider">
+                <div id="competitor1" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/vis_level5/train_3dgs.png" alt="3DGS">
                     <img src="./static/images/vis_level5/train_level5.png" alt="Ours">
                   </div>
                 </div>
 
-                <div class="comparison-slider">
+                <div id="competitor2" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/vis_level5/9f518d_mip.png" alt="Mip-Splattng">
                     <img src="./static/images/vis_level5/9f518d_level5.png" alt="Ours">
@@ -601,14 +601,14 @@
           <div class="content">
             <div class="columns is-centered">
               <div class="column is-full-width">
-                <div class="comparison-slider">
+                <div id="competitor3" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/vis_level5/aeb335_scaffold.png" alt="Scaffold-GS">
                     <img src="./static/images/vis_level5/aeb335_level5.png" alt="Ours">
                   </div>
                 </div>
 
-                <div class="comparison-slider">
+                <div id="competitor4" class="comparison-slider">
                   <div class="b-dics">
                     <img src="./static/images/vis_level5/kitchen_octree.png" alt="Octree-GS">
                     <img src="./static/images/vis_level5/kitchen_level5.png" alt="Ours">
@@ -623,7 +623,6 @@
     </div>
   </div>
 </section>
-
 
 
 
