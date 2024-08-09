@@ -2,11 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="FLoD: Integrating Flexible Level of Detail into 3D Gaussian Splatting">
+  <meta name="keywords" content="FLoD">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>FLoD: Integrating Flexible Level of Detail into 3D Gaussian Splatting</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,13 +31,14 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script src="./static/js/event_handler.js"></script>
 </head>
 <body>
 
@@ -88,8 +88,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-1 publication-title">FLoD: Integrating Flexible Level of Detail into 3D Gaussian Splatting</h1>
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -109,16 +109,16 @@
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
             </span>
-          </div>
+          </div> -->
 
-          <div class="is-size-5 publication-authors">
+          <!-- <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Washington,</span>
             <span class="author-block"><sup>2</sup>Google Research</span>
-          </div>
+          </div> -->
 
-          <div class="column has-text-centered">
+          <!-- <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -137,7 +137,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
+
               <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
@@ -147,7 +147,7 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+     
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
@@ -157,7 +157,7 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
+   
               <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
@@ -168,14 +168,35 @@
                   </a>
             </div>
 
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- demo video -->
 <section class="hero teaser">
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <video class="fixed-size-video rounded-corners" id="supp video" autoplay="" loop="" muted="" playsinline="" controls="" data-video="0">
+        <source src="./static/videos/dollyzoom-stacked.mp4" type="video/mp4">
+      </video>
+
+      <div class="text-container">
+        <!-- <p style="font-size:22px; width: 95%; margin: auto;"> -->
+        <p>
+          Our method enables customizable and memory-efficient rendering across various hardware configurations.
+        </p>  
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -189,10 +210,10 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -247,238 +268,653 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-
+<!-- Abstract. -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            3D Gaussian Splatting (3DGS) achieves fast and high-quality renderings by using numerous small Gaussians, which leads to significant memory consumption. 
+            This reliance on a large number of Gaussians restricts the application of 3DGS-based models on low-cost devices due to memory limitations. 
+            However, simply reducing the number of Gaussians to accommodate devices with less memory capacity leads to inferior quality compared to what is achievable on high-end hardware.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            To address this, we propose integrating a <b>Flexible Level of Detail (FLoD)</b> to 3DGS, allowing a scene to be rendered at varying levels of detail according to hardware capabilities.
+            While existing 3DGSs with LoD focus on detailed reconstruction, our method provides reconstructions using a small number of Gaussians for reduced memory requirements, and a larger number of Gaussians for greater detail.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Empirical results demonstrate that our method provides various rendering options with tradeoffs between rendering quality and memory usage, thereby allowing real-time rendering across different memory constraints.
+            Furthermore, we show that our method generalizes to different 3DGS frameworks, indicating its potential for integration into future state-of-the-art developments. 
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
+<!-- method overview -->
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/method.pdf" type="application/pdf" width="100%">
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            Training starts at level 1 with the given SfM points and proceeds to the maximum level. 
+            Each level's training includes applying a scale constraint to provide the appropriate detail for that level 
+            and performing overlap pruning to mitigate Gaussian overlap. 
+            Upon completing each level’s training, Gaussian clones are saved to create a multi-level Gaussian set. 
+            This set enables both high-quality rendering using the maximum level and 
+            efficient rendering through selective rendering by using multiple levels.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
 
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+  </div>
+</section>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
+<!-- visualization for each level -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Visualization for each Level</h2>
+        
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(0)">Train</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(1)">Truck</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(2)">Kitchen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(3)">Bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(4)">Park</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(5)">Stream</a>
+              </li>
+
+          </ul>
+          <div class="b-dics b-dics--tp-bottom" style="font-weight: 600; height: 462.135px; opacity: 1;">       
+              
+            <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 173.898px;"><div class="b-dics__image-container"><p class="b-dics__text">Level1</p><img src="./static/images/all_levels/train_Level1.png" alt="Level1" class="b-dics__image" style="left: 0px;"></div><div class="b-dics__slider" style="left: 173.898px;"></div></div>
+            <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 173.898px;"><div class="b-dics__image-container"><p class="b-dics__text">Level2</p><img src="./static/images/all_levels/train_Level2.png" alt="Level2" class="b-dics__image" style="left: -173.898px;"></div><div class="b-dics__slider" style="left: 347.797px;"></div></div>
+            <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 173.898px;"><div class="b-dics__image-container"><p class="b-dics__text">Level3</p><img src="./static/images/all_levels/train_Level3.png" alt="Level3" class="b-dics__image" style="left: -347.797px;"></div><div class="b-dics__slider" style="left: 521.695px;"></div></div>
+            <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 173.898px;"><div class="b-dics__image-container"><p class="b-dics__text">Level4</p><img src="./static/images/all_levels/train_Level4.png" alt="Level4" class="b-dics__image" style="left: -400.797px;"></div><div class="b-dics__slider" style="left: 574.695px;"></div></div>
+            <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 173.898px;"><div class="b-dics__image-container"><p class="b-dics__text">Level5</p><img src="./static/images/all_levels/train_Level5.png" alt="Level5" class="b-dics__image" style="left: -521.695px;"></div></div>
+
+          </div>
         </div>
-        <!--/ Re-rendering. -->
+
 
       </div>
     </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+<!-- visual comparsion level5 vs level543 -->
+<section class="section">
+  <div class="container ">
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Level5 vs Level{5,4,3}</h2>
+      <div class="content has-text-justified">
+        <p>
+
+        </p>
+      </div>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div id="example1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/high_levels/train_level543.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Level5
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:93.03030303030303%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/high_levels/train_level5.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Level{5,4,3}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:93.03030303030303%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+
+                <div id="example2" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/high_levels/9df87_level543.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Level5
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:75.45454545454545%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/high_levels/9df87_level5.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Level{5,4,3}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:75.45454545454545%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/high_levels/stump_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Level
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:97.21030042918454%;">
+                  <div class="bal-before-inset" style="width: 660px;">
+                    <img src="./static/images/high_levels/stump_level543.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Level{5,4,3}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:97.21030042918454%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+
+              <div id="example5" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/high_levels/garden_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Level
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:34.39393939393939%;">
+                  <div class="bal-before-inset" style="width: 466px;">
+                    <img src="./static/images/high_levels/garden_level543.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Level{5,4,3}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:34.39393939393939%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+
+
+<!-- visual comparsion level5 -->
+<section class="section">
+  <div class="container ">
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Visual Comparisons</h2>
+      <div class="content has-text-justified">
+        <p>
+
+        </p>
+      </div>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div id="example1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/train_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:93.03030303030303%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/vis_level5/train_3dgs.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        3DGS
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:93.03030303030303%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+
+                <div id="example2" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/9f518d_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:75.45454545454545%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/vis_level5/9f518d_mip.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Mip-Splattng
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:75.45454545454545%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/aeb335_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:97.21030042918454%;">
+                  <div class="bal-before-inset" style="width: 660px;">
+                    <img src="./static/images/vis_level5/aeb335_scaffold.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Scaffold-GS
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:97.21030042918454%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+
+              <div id="example5" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/kitchen_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:34.39393939393939%;">
+                  <div class="bal-before-inset" style="width: 466px;">
+                    <img src="./static/images/vis_level5/kitchen_octree.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Octree-GS
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:34.39393939393939%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Low-mid level comparison -->
+<!-- tmp -->
+<section class="section">
+  <div class="container ">
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Low-Mid Level Comparison</h2>
+      <div class="content has-text-justified">
+        <p>
+
+        </p>
+      </div>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div id="example1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/train_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:93.03030303030303%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/vis_level5/train_3dgs.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        3DGS
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:93.03030303030303%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+
+                <div id="example2" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/9f518d_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:75.45454545454545%;">
+                    <div class="bal-before-inset" style="width: 660px;">
+                      <img src="./static/images/vis_level5/9f518d_mip.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Mip-Splattng
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:75.45454545454545%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/aeb335_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:97.21030042918454%;">
+                  <div class="bal-before-inset" style="width: 660px;">
+                    <img src="./static/images/vis_level5/aeb335_scaffold.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Scaffold-GS
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:97.21030042918454%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+
+              <div id="example5" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/kitchen_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:34.39393939393939%;">
+                  <div class="bal-before-inset" style="width: 466px;">
+                    <img src="./static/images/vis_level5/kitchen_octree.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Octree-GS
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:34.39393939393939%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Low-mid level comparison -->
+<!-- <section class="section">
+  <div class="container">
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Low-Mid Level Comparisons</h2>
+      <div class="content has-text-justified">
+        <p>
+
+        </p>
+      </div>
+
+      <div id="results-carousel" class=" carousel results-carousel">
+        <div id="slider70672b9c-2b94-4024-83f5-2dccf61eb23a" class="slider" tabindex="0">
+              <div class="slider-container" style="opacity: 1; width: 15795px; transition: none; transform: translate3d(-2545.5px, 0px, 0px);"><div class="slider-item" data-slider-index="-5" data-cloned="true" style="width: 585px;"><div class="item item-counter">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="0">
+                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 585px;"><div class="item item-kitchen">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="1">
+                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 585px;"><div class="item item-train">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="2">
+                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 585px;"><div class="item item-struck">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="3">
+                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 585px;"><div class="item item-stump">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="4">
+                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item is-current" data-slider-index="0" style="width: 585px;"><div class="item item-room">
+                      <video poster="" id="room" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="5">
+                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item is-slide-previous is-slide-next" data-slider-index="1" style="width: 585px;"><div class="item item-garden">
+                      <video poster="" id="garden" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="6">
+                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="2" style="width: 585px;"><div class="item item-bicycle">
+                      <video poster="" id="bicycle" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="7">
+                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="3" style="width: 585px;"><div class="item item-bonsai">
+                      <video poster="" id="bonsai" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="8">
+                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="4" style="width: 585px;"><div class="item item-counter">
+                      <video poster="" id="counter" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="9">
+                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="5" style="width: 585px;"><div class="item item-kitchen">
+                      <video poster="" id="kitchen" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="10">
+                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="6" style="width: 585px;"><div class="item item-train">
+                    <video poster="" id="train" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="11">
+                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="7" style="width: 585px;"><div class="item item-struck">
+                    <video poster="" id="toby" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="12">
+                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="8" style="width: 585px;"><div class="item item-stump">
+                    <video poster="" id="stump" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="13">
+                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="9" data-cloned="true" style="width: 585px;"><div class="item item-room">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="14">
+                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="10" data-cloned="true" style="width: 585px;"><div class="item item-garden">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="15">
+                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="11" data-cloned="true" style="width: 585px;"><div class="item item-bicycle">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="16">
+                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="12" data-cloned="true" style="width: 585px;"><div class="item item-bonsai">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="17">
+                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="13" data-cloned="true" style="width: 585px;"><div class="item item-counter">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="18">
+                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="14" data-cloned="true" style="width: 585px;"><div class="item item-kitchen">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="19">
+                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="15" data-cloned="true" style="width: 585px;"><div class="item item-train">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="20">
+                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="16" data-cloned="true" style="width: 585px;"><div class="item item-struck">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="21">
+                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="17" data-cloned="true" style="width: 585px;"><div class="item item-stump">
+                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="22">
+                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
+                    </video>
+                  </div></div><div class="slider-item" data-slider-index="18" data-cloned="true" style="width: 585px;"><div class="item item-room">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="23">
+                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="19" data-cloned="true" style="width: 585px;"><div class="item item-garden">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="24">
+                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="20" data-cloned="true" style="width: 585px;"><div class="item item-bicycle">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="25">
+                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div><div class="slider-item" data-slider-index="21" data-cloned="true" style="width: 585px;"><div class="item item-bonsai">
+                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="26">
+                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
+                      </video>
+                    </div></div>
+              </div>
+              <div class="slider-navigation-previous">
+                <svg viewBox="0 0 50 80" xml:space="preserve">
+                  <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                </svg>
+              </div>
+              <div class="slider-navigation-next">
+                <svg viewBox="0 0 50 80" xml:space="preserve">
+                  <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                </svg>
+              </div>
+            <div class="slider-pagination"><div class="slider-page" data-index="0"></div><div class="slider-page" data-index="1"></div><div class="slider-page" data-index="2"></div><div class="slider-page" data-index="3"></div><div class="slider-page" data-index="4"></div><div class="slider-page" data-index="5"></div><div class="slider-page" data-index="6"></div><div class="slider-page" data-index="7"></div><div class="slider-page" data-index="8"></div></div>
+          </div>
+        </div>
+      <p>The caption displays both the file size and the Structural Similarity Index (SSIM)</p>
+    </div>
+  </div>
+</section> -->
+
 
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a> that kindly open sourced the template of this website.
           </p>
         </div>
       </div>
