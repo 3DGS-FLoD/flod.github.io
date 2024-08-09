@@ -58,15 +58,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const sliders = document.querySelectorAll('.comparison-slider');
-  
+    // 첫 번째 기능: .b-dics 슬라이더 초기화
+    const sliders = document.querySelectorAll('.b-dics');
+
     sliders.forEach(function(slider) {
-      const range = slider.querySelector('.slider');
-      const overlay = slider.querySelector('.comparison-overlay');
-  
-      range.addEventListener('input', function() {
-        overlay.style.width = `${this.value}%`;
-      });
+        new Dics({
+            container: slider,
+            hideTexts: true,
+            textPosition: "center"
+        });
     });
-  });
+
+    // 두 번째 기능: .comparison-slider 초기화
+    const comparisonSliders = document.querySelectorAll('.comparison-slider');
+
+    comparisonSliders.forEach(function(slider) {
+        const range = slider.querySelector('.slider');
+        const overlay = slider.querySelector('.comparison-overlay');
+
+        range.addEventListener('input', function() {
+            overlay.style.width = `${this.value}%`;
+        });
+    });
+});
+
   
