@@ -41,6 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+new BeforeAfter({ id: '#example1' });
+new BeforeAfter({ id: '#example2' });
+new BeforeAfter({ id: 'example3' });
+new BeforeAfter({ id: 'example4' });
+new BeforeAfter({ id: 'example5' });
+new BeforeAfter({ id: 'example6' });
+new BeforeAfter({ id: 'example7' });
+new BeforeAfter({ id: 'example8' });
+new BeforeAfter({ id: 'example10' });
+new BeforeAfter({ id: 'example11' });
+new BeforeAfter({ id: 'example12' });
+new BeforeAfter({ id: 'example13' });
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     // 첫 번째 기능: .b-dics 슬라이더 초기화
 //     const sliders = document.querySelectorAll('.b-dics');
