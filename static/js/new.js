@@ -57,29 +57,29 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // 첫 번째 기능: .b-dics 슬라이더 초기화
-    const sliders = document.querySelectorAll('.b-dics');
+// document.addEventListener('DOMContentLoaded', function() {
+//     // 첫 번째 기능: .b-dics 슬라이더 초기화
+//     const sliders = document.querySelectorAll('.b-dics');
 
-    sliders.forEach(function(slider) {
-        new Dics({
-            container: slider,
-            hideTexts: true,
-            textPosition: "center"
-        });
-    });
+//     sliders.forEach(function(slider) {
+//         new Dics({
+//             container: slider,
+//             hideTexts: true,
+//             textPosition: "bottom"
+//         });
+//     });
 
-    // 두 번째 기능: .comparison-slider 초기화
-    const comparisonSliders = document.querySelectorAll('.comparison-slider');
+//     // 두 번째 기능: .comparison-slider 초기화
+//     const comparisonSliders = document.querySelectorAll('.comparison-slider');
 
-    comparisonSliders.forEach(function(slider) {
-        const range = slider.querySelector('.slider');
-        const overlay = slider.querySelector('.comparison-overlay');
+//     comparisonSliders.forEach(function(slider) {
+//         const range = slider.querySelector('.slider');
+//         const overlay = slider.querySelector('.comparison-overlay');
 
-        range.addEventListener('input', function() {
-            overlay.style.width = `${this.value}%`;
-        });
-    });
-});
+//         range.addEventListener('input', function() {
+//             overlay.style.width = `${this.value}%`;
+//         });
+//     });
+// });
 
   
