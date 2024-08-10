@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const independentSliders = document.querySelectorAll('.independent-slider');
 
-    independentSliders.forEach(function(slider) {
+    independentSliders.forEach(function(slid) {
     new Dics({
-      container: slider,
+      container: slid,
       hideTexts: false,
       textPosition: "bottom",
       // linesOrientation: 'horizontal', 
