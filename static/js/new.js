@@ -1,3 +1,17 @@
+// document.addEventListener('DOMContentLoaded', function() {
+//   const independentSliders = document.querySelectorAll('.independent-slider');
+
+//   independentSliders.forEach(function(slider) {
+//     new Dics({
+//       container: slider,
+//       hideTexts: false,
+//       textPosition: "bottom",
+//       // linesOrientation: 'horizontal', 
+//       // linesColor: '#FFFFFF'
+//     });
+//   });
+// });
+
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     function BeforeAfter(options) {
@@ -69,57 +83,26 @@
 
 //   });
 
-// // document.addEventListener('DOMContentLoaded', function() {
-// //   function BeforeAfter(options) {
-// //       this.container = document.querySelector(options.id);
-// //       this.handle = this.container.querySelector('.bal-handle');
-// //       this.before = this.container.querySelector('.bal-before');
-  
-// //       this.init();
-// //   }
-  
-// //   BeforeAfter.prototype.init = function() {
-// //       const self = this;
-      
-// //       // 슬라이더 핸들 위에 마우스를 올려놓기만 해도 슬라이더가 움직이도록 설정
-// //       this.handle.addEventListener('mousemove', function(e) {
-// //           self.update(e.clientX);
-// //       });
-
-// //       // 만약 핸들뿐만 아니라 슬라이더 전체에서 마우스가 움직일 때도 작동하게 하려면
-// //       this.container.addEventListener('mousemove', function(e) {
-// //           self.update(e.clientX);
-// //       });
-// //   };
-
-// //   BeforeAfter.prototype.update = function(x) {
-// //       const rect = this.container.getBoundingClientRect();
-// //       let position = ((x - rect.left) / rect.width) * 100;
-// //       position = Math.max(0, Math.min(100, position));
-
-// //       // 슬라이더 핸들과 before 영역의 위치를 업데이트
-// //       this.handle.style.left = position + '%';
-// //       this.before.style.width = position + '%';
-// //   };
-
-// //   // 여러 개의 슬라이더를 초기화
-// //   new BeforeAfter({ id: '#example1' });
-// //   new BeforeAfter({ id: '#example2' });
-// //   new BeforeAfter({ id: '#example3' });
-// //   new BeforeAfter({ id: '#example4' });
-// //   // 필요에 따라 추가
-// // });
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
+  function syncBeforeAfterSize() {
+      const afterElement = document.querySelector('.bal-after');
+      const beforeInsetElement = document.querySelector('.bal-before-inset');
+
+      if (afterElement && beforeInsetElement) {
+          const afterWidth = afterElement.offsetWidth;
+          const afterHeight = afterElement.offsetHeight;
+
+          beforeInsetElement.style.width = afterWidth + 'px';
+          beforeInsetElement.style.height = afterHeight + 'px';
+      }
+  }
+
   function BeforeAfter(options) {
       this.container = document.querySelector(options.id);
       this.handle = this.container.querySelector('.bal-handle');
       this.before = this.container.querySelector('.bal-before');
       this.after = this.container.querySelector('.bal-after');
-      this.beforeInset = this.before.querySelector('.bal-before-inset'); // bal-before-inset 선택자 추가
+      this.beforeInset = this.before.querySelector('.bal-before-inset'); 
 
       this.init();
   }
@@ -130,6 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
       document.addEventListener('mousemove', function(e) { self.onDrag(e); });
       document.addEventListener('mouseup', function() { self.onDragEnd(); });
       this.dragging = false;
+
+      // 초기 로드 시 크기 동기화
+      syncBeforeAfterSize();
   };
 
   BeforeAfter.prototype.onDragStart = function(e) {
@@ -155,14 +141,15 @@ document.addEventListener('DOMContentLoaded', function() {
       this.handle.style.left = position + '%';
       this.before.style.width = position + '%';
 
-      // bal-before-inset의 width를 bal-after의 width와 동일하게 설정
-      const afterWidth = 100 - position; // bal-after의 width는 전체 width에서 before의 width를 뺀 값
-      this.beforeInset.style.width = afterWidth + '%';
+      // 핸들 이동 시 크기 동기화
+      syncBeforeAfterSize();
   };
 
   new BeforeAfter({ id: '#example1' });
   new BeforeAfter({ id: '#example2' });
   new BeforeAfter({ id: '#example3' });
   new BeforeAfter({ id: '#example4' });
-  // 필요에 따라 다른 슬라이더도 추가
+
+  // 윈도우 리사이즈 시 크기 동기화
+  window.addEventListener('resize', syncBeforeAfterSize);
 });
