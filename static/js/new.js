@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const sliders = document.querySelectorAll('.b-dics');
+  const independentSliders = document.querySelectorAll('.independent-slider');
 
-  sliders.forEach(function(slider) {
+  independentSliders.forEach(function(slider) {
     new Dics({
       container: slider,
-      linesOrientation: 'vertical', // Change to 'horizontal' for horizontal sliders
-      textPosition: 'bottom', // or 'center', 'top', etc.
-      // linesColor: '#FFFFFF' // Optional: set the color of the slider line
+      hideTexts: false,
+      textPosition: "bottom",
+      linesOrientation: 'horizontal', // Default or change as needed
+      linesColor: '#FFFFFF' // Optional: Set the color of the slider line
     });
   });
 });
