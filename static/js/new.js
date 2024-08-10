@@ -15,6 +15,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     function BeforeAfter(options) {
+      console.log("options.id:", options.id);  // options.id 확인
+
+        this.container = document.querySelector(options.id);
+        console.log("this.container:", this.container);  // this.container 확인
+
+        if (!this.container) {
+            console.error(`Element with id ${options.id} not found.`);
+            return;
+        }
+
+
       this.container = document.querySelector(options.id);
       this.handle = this.container.querySelector('.bal-handle');
       this.before = this.container.querySelector('.bal-before');
