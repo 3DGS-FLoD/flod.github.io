@@ -1,73 +1,141 @@
-document.addEventListener('DOMContentLoaded', domReady);
+// document.addEventListener('DOMContentLoaded', domReady);
 
-        function domReady() {
-            new Dics({
-                container: document.querySelectorAll('.b-dics')[0],
-                hideTexts: false,
-                textPosition: "bottom"
+//         function domReady() {
+//             new Dics({
+//                 container: document.querySelectorAll('.b-dics')[0],
+//                 hideTexts: false,
+//                 textPosition: "bottom"
 
-            });
-            new Dics({
-                container: document.querySelectorAll('.b-dics')[1],
-                hideTexts: false,
-                textPosition: "bottom"
+//             });
+//             new Dics({
+//                 container: document.querySelectorAll('.b-dics')[1],
+//                 hideTexts: false,
+//                 textPosition: "bottom"
 
-            });
+//             });
+//         }
+
+//         function objectSceneEvent(idx) {
+//             let dics = document.querySelectorAll('.b-dics')[0]
+//             let sections = dics.getElementsByClassName('b-dics__section')
+//             let imagesLength = 5
+//             for (let i = 0; i < imagesLength; i++) {
+//                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
+//                 switch (idx) {
+//                     case 0:
+//                         image.src = './static/images/all_levels/train';
+//                         break;
+//                     case 1:
+//                         image.src = './static/images/all_levels/truck';
+//                         break;
+//                     case 2:
+//                         image.src = './static/images/all_levels/kitchen';
+//                         break;
+//                     case 3:
+//                         image.src = './static/images/all_levels/bicycle';
+//                         break;
+//                     case 4:
+//                         image.src = './static/images/all_levels/9f518';
+//                         break;
+//                     case 5:
+//                         image.src = './static/images/all_levels/ce060';
+//                         break;    
+//                 }
+//                 switch (i) {
+//                     case 0:
+//                         image.src = image.src + '_Level1.png';
+//                         break;
+//                     case 1:
+//                         image.src = image.src + '_Level2.png';
+//                         break;
+//                     case 2:
+//                         image.src = image.src + '_Level3.png';
+//                         break;
+//                     case 3:
+//                         image.src = image.src + '_Level4.png';
+//                         break;
+//                     case 4:
+//                         image.src = image.src + '_Level5.png';
+//                     break;
+
+//                 }
+//             }
+
+//             let scene_list = document.getElementById("object-scale-recon").children;
+//             for (let i = 0; i < scene_list.length; i++) {
+//                 if (idx == i) {
+//                     scene_list[i].children[0].className = "nav-link active"
+//                 }
+//                 else {
+//                     scene_list[i].children[0].className = "nav-link"
+//                 }
+//             }
+//         }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const levelVisualizationSlider = document.querySelector('.level-visualization');
+    
+    if (levelVisualizationSlider) {
+        new Dics({
+            container: levelVisualizationSlider,
+            hideTexts: false,
+            textPosition: "bottom"
+        });
+    }
+});
+
+function objectSceneEvent(idx) {
+    let dics = document.querySelector('.level-visualization');
+    let sections = dics.getElementsByClassName('b-dics__section');
+    let imagesLength = 5;
+    for (let i = 0; i < imagesLength; i++) {
+        let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0];
+        switch (idx) {
+            case 0:
+                image.src = './static/images/all_levels/train';
+                break;
+            case 1:
+                image.src = './static/images/all_levels/truck';
+                break;
+            case 2:
+                image.src = './static/images/all_levels/kitchen';
+                break;
+            case 3:
+                image.src = './static/images/all_levels/bicycle';
+                break;
+            case 4:
+                image.src = './static/images/all_levels/9f518';
+                break;
+            case 5:
+                image.src = './static/images/all_levels/ce060';
+                break;    
         }
-
-        function objectSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
-            let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 5
-            for (let i = 0; i < imagesLength; i++) {
-                let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
-                switch (idx) {
-                    case 0:
-                        image.src = './static/images/all_levels/train';
-                        break;
-                    case 1:
-                        image.src = './static/images/all_levels/truck';
-                        break;
-                    case 2:
-                        image.src = './static/images/all_levels/kitchen';
-                        break;
-                    case 3:
-                        image.src = './static/images/all_levels/bicycle';
-                        break;
-                    case 4:
-                        image.src = './static/images/all_levels/9f518';
-                        break;
-                    case 5:
-                        image.src = './static/images/all_levels/ce060';
-                        break;    
-                }
-                switch (i) {
-                    case 0:
-                        image.src = image.src + '_Level1.png';
-                        break;
-                    case 1:
-                        image.src = image.src + '_Level2.png';
-                        break;
-                    case 2:
-                        image.src = image.src + '_Level3.png';
-                        break;
-                    case 3:
-                        image.src = image.src + '_Level4.png';
-                        break;
-                    case 4:
-                        image.src = image.src + '_Level5.png';
-                    break;
-
-                }
-            }
-
-            let scene_list = document.getElementById("object-scale-recon").children;
-            for (let i = 0; i < scene_list.length; i++) {
-                if (idx == i) {
-                    scene_list[i].children[0].className = "nav-link active"
-                }
-                else {
-                    scene_list[i].children[0].className = "nav-link"
-                }
-            }
+        switch (i) {
+            case 0:
+                image.src = image.src + '_Level1.png';
+                break;
+            case 1:
+                image.src = image.src + '_Level2.png';
+                break;
+            case 2:
+                image.src = image.src + '_Level3.png';
+                break;
+            case 3:
+                image.src = image.src + '_Level4.png';
+                break;
+            case 4:
+                image.src = image.src + '_Level5.png';
+                break;
         }
+    }
+
+    let scene_list = document.getElementById("object-scale-recon").children;
+    for (let i = 0; i < scene_list.length; i++) {
+        if (idx == i) {
+            scene_list[i].children[0].className = "nav-link active";
+        } else {
+            scene_list[i].children[0].className = "nav-link";
+        }
+    }
+}

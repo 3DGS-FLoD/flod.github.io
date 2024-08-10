@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     // function BeforeAfter(options) {
 //     //   this.container = document.querySelector(options.id);
