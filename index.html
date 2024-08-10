@@ -335,35 +335,35 @@
 <section class="section">
   <div class="container">
     <div class="column is-centered has-text-centered">
-        <h2 class="title is-3">Visualization for each Level</h2>
-        <div class="content has-text-justified">
-          <p>
-  
-          </p>
-        </div>
-        
-        <div class="content is-centered">
-          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-              <li class="nav-item">
-                <a class="nav-link active" onclick="objectSceneEvent(0)">Train</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(1)">Truck</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(2)">Kitchen</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(3)">Bicycle</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(4)">Park</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="objectSceneEvent(5)">Stream</a>
-              </li>
+      <h2 class="title is-3">Visualization for each Level</h2>
+      <div class="content has-text-justified">
+        <p></p>
+      </div>
 
+      <!-- Flexbox를 사용하여 중앙에 정렬 -->
+      <div class="content-wrapper" style="display: flex; justify-content: center;">
+        <div class="content" style="width: 80%;">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+            <li class="nav-item">
+              <a class="nav-link active" onclick="objectSceneEvent(0)">Train</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="objectSceneEvent(1)">Truck</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="objectSceneEvent(2)">Kitchen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="objectSceneEvent(3)">Bicycle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="objectSceneEvent(4)">Park</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="objectSceneEvent(5)">Stream</a>
+            </li>
           </ul>
+
           <div class="b-dics level-visualization" style="font-weight: 600;">
             <img src="./static/images/all_levels/train_Level1.png" alt="Lev1">
             <img src="./static/images/all_levels/train_Level2.png" alt="Lev2">
@@ -372,10 +372,12 @@
             <img src="./static/images/all_levels/train_Level5.png" alt="Lev5">
           </div>
         </div>
+      </div>
 
     </div>
-  </d3v>
+  </div>
 </section>
+
 
 
 <!-- visual comparsion level5 vs level543 -->
@@ -391,13 +393,12 @@
       <div class="columns is-centered">
 
         <div class="column">
-          <div class="content">
             <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div id="example1" class="bal-container-small">
+              <div class="column content">
+                <div id="highlevel1" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/high_levels/train_level543.png">
+                    <img src="./static/images/high_levels/train_level5.png">
                     <div class="bal-afterPosition afterLabel" style="z-index:1;">
                       Level5
                     </div>
@@ -405,7 +406,7 @@
 
                   <div class="bal-before" style="width:93.03030303030303%;">
                     <div class="bal-before-inset">
-                      <img src="./static/images/high_levels/train_level5.png">
+                      <img src="./static/images/high_levels/train_level543.png">
                       <div class="bal-beforePosition beforeLabel">
                         Level{5,4,3}
                       </div>
@@ -420,10 +421,10 @@
                 </div>
 
 
-                <div id="example2" class="bal-container-small">
+                <div id="highlevel2" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/high_levels/9df87_level543.png">
+                    <img src="./static/images/high_levels/9df87_level5.png">
                     <div class="bal-afterPosition afterLabel" style="z-index:1;">
                       Level5
                     </div>
@@ -431,9 +432,9 @@
 
                   <div class="bal-before" style="width:75.45454545454545%;">
                     <div class="bal-before-inset">
-                      <img src="./static/images/high_levels/9df87_level5.png">
+                      <img src="./static/images/high_levels/9df87_level543.png">
                       <div class="bal-beforePosition beforeLabel">
-                        Level{5,4,3}
+                        Level(5,4,3)
                       </div>
                     </div>
                   </div>
@@ -446,7 +447,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
 
@@ -454,11 +454,11 @@
           <div class="columns is-centered">
             <div class="column content">
 
-              <div id="example3" class="bal-container-small">
+              <div id="highlevel3" class="bal-container-small">
                 <div class="bal-after">
                   <img src="./static/images/high_levels/stump_level5.png">
                   <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Level
+                    Level5
                   </div>
                 </div>
 
@@ -478,11 +478,11 @@
 
               </div>
 
-              <div id="example4" class="bal-container-small">
+              <div id="highlevel4" class="bal-container-small">
                 <div class="bal-after">
                   <img src="./static/images/high_levels/garden_level5.png">
                   <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Level
+                    Level5
                   </div>
                 </div>
 
@@ -490,7 +490,7 @@
                   <div class="bal-before-inset">
                     <img src="./static/images/high_levels/garden_level543.png">
                     <div class="bal-beforePosition beforeLabel">
-                      Level{5,4,3}
+                      Lev(5,4,3)
                     </div>
                   </div>
                 </div>
@@ -509,123 +509,131 @@
   </div>
 </section>
 
-<!-- Visual Comparisons - Independent Sliders -->
-<section class="section">
-  <div class="container">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Visual Comparisons</h2>
 
-          <div class="independent-slider">
-            <img src="./static/images/high_levels/train_level5.png" alt="CF-3DGS [Fu 2023]">
-            <img src="./static/images/high_levels/train_level543.png" alt="Ours">
-          </div>
-        </div>
-  </div>
-</section>
-
-<!-- Visual Comparisons - Independent Sliders -->
-<section class="section">
-  <div class="container">
-    <div class="has-text-centered">
-      <h2 class="title is-3">Visual Comparisons</h2>
-
-      <div class="columns is-multiline is-centered">
-        <div class="column is-half">
-          <div class="independent-slider">
-            <img src="./static/images/high_levels/train_level5.png" alt="CF-3DGS [Fu 2023]">
-            <img src="./static/images/high_levels/train_level543.png" alt="Ours">
-          </div>
-        </div>
-
-        <div class="column is-half">
-          <div class="independent-slider">
-            <img src="./static/images/high_levels/9df87_level5.png" alt="CF-3DGS [Fu 2023]">
-            <img src="./static/images/high_levels/9df87_level543.png" alt="Ours">
-          </div>
-        </div>
-
-        <div class="column is-half">
-          <div class="independent-slider">
-            <img src="./static/images/high_levels/stump_level5.png" alt="Nope-NeRF [Bian 2022]">
-            <img src="./static/images/high_levels/stump_level543.png" alt="Ours">
-          </div>
-        </div>
-
-        <div class="column is-half">
-          <div class="independent-slider">
-            <img src="./static/images/high_levels/garden_level5.png" alt="Nope-NeRF [Bian 2022]">
-            <img src="./static/images/high_levels/garden_level543.png" alt="Ours">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- test - Level5 vs Level{5,4,3} -->
+<!-- visual comparsion level5 -->
 <section class="section">
   <div class="container ">
-    <div class="has-text-centered">
-      <h2 class="title is-3">test - Level5 vs Level{5,4,3}</h2>
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Visual Comparisons</h2>
       <div class="content has-text-justified">
-        <p></p>
+        <p>
+
+        </p>
       </div>
       <div class="columns is-centered">
 
         <div class="column">
-          <div class="content">
             <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div class="comparison-container">
-                  <div id="high1" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/high_levels/train_level5.png" alt="Level5">
-                      <img src="./static/images/high_levels/train_level543.png" alt="Level{5,4,3}">
+              <div class="column content">
+                <div id="viscomp1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/train_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
                     </div>
                   </div>
+
+                  <div class="bal-before" style="width:93.03030303030303%;">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/vis_level5/train_3dgs.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        3DGS
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:93.03030303030303%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
                 </div>
 
-                <div class="comparison-container">
-                  <div id="high2" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/high_levels/9df87_level5.png" alt="Level5">
-                      <img src="./static/images/high_levels/9df87_level543.png" alt="Level{5,4,3}">
+
+                <div id="viscomp2" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/vis_level5/9df87_level5.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
                     </div>
                   </div>
+
+                  <div class="bal-before" style="width:75.45454545454545%;">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/vis_level5/9f518d_mip.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Mip-Splattng
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:75.45454545454545%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
                 </div>
               </div>
             </div>
-          </div>
         </div>
+
 
         <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div class="comparison-container">
-                  <div id="high3" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/high_levels/stump_level5.png" alt="Level5">
-                      <img src="./static/images/high_levels/stump_level543.png" alt="Level{5,4,3}">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="viscomp3" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/aeb335_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:97.21030042918454%;">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/vis_level5/aeb335_scaffold.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Scaffold-GS
                     </div>
                   </div>
                 </div>
 
-                <div class="comparison-container">
-                  <div id="high4" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/high_levels/garden_level5.png" alt="Level5">
-                      <img src="./static/images/high_levels/garden_level543.png" alt="Level{5,4,3}">
+                <div class="bal-handle" style="left:97.21030042918454%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+
+              <div id="viscomp4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/vis_level5/kitchen_level5.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:34.39393939393939%;">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/vis_level5/kitchen_octree.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Octree-GS
                     </div>
                   </div>
                 </div>
+
+                <div class="bal-handle" style="left:34.39393939393939%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

@@ -238,10 +238,17 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // 모든 슬라이더를 초기화
-  new BeforeAfter({ id: '#example1' });
-  new BeforeAfter({ id: '#example2' });
-  new BeforeAfter({ id: '#example3' });
-  new BeforeAfter({ id: '#example4' });
+  new BeforeAfter({ id: '#highlevel1' });
+  new BeforeAfter({ id: '#highlevel2' });
+  new BeforeAfter({ id: '#highlevel3' });
+  new BeforeAfter({ id: '#highlevel4' });
+
+  new BeforeAfter({ id: '#viscomp1' });
+  new BeforeAfter({ id: '#viscomp2' });
+  new BeforeAfter({ id: '#viscomp3' });
+  new BeforeAfter({ id: '#viscomp4' });
+
+
 
   // 윈도우 리사이즈 시 크기 동기화
   window.addEventListener('resize', function() {
