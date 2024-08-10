@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const sliders = document.querySelectorAll('.b-dics');
+
+  sliders.forEach(function(slider) {
+    new Dics({
+      container: slider,
+      linesOrientation: 'vertical', // Change to 'horizontal' for horizontal sliders
+      textPosition: 'bottom', // or 'center', 'top', etc.
+      // linesColor: '#FFFFFF' // Optional: set the color of the slider line
+    });
+  });
+});
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     // function BeforeAfter(options) {
 //     //   this.container = document.querySelector(options.id);

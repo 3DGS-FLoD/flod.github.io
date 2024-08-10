@@ -47,6 +47,7 @@
   <link rel="stylesheet" href="./static/css/dics.original.css">
   <script src="./static/js/event_handler.js"></script>
   <script src="./static/js/dics.original.js"></script>
+  <script src="./static/js/new.js"></script>
 </head>
 <body>
 
@@ -341,7 +342,7 @@
           </p>
         </div>
         
-        <div class="content is-centered" style="width: 80%;">
+        <div class="content is-centered">
           <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
               <li class="nav-item">
                 <a class="nav-link active" onclick="objectSceneEvent(0)">Train</a>
@@ -508,6 +509,44 @@
   </div>
 </section> -->
 
+<!-- Visual Comparisons -->
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Visual Comparisons</h2>
+
+      <div class="columns is-multiline is-centered">
+        <div class="column is-half">
+          <div class="b-dics">
+            <img src="./static/images/high_levels/train_level5.png" alt="Level5">
+            <img src="./static/images/high_levels/train_level543.png" alt="Level{5,4,3}">
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="b-dics">
+            <img src="./static/images/high_levels/9df87_level5.png" alt="CF-3DGS [Fu 2023]">
+            <img src="./static/images/high_levels/9df87_level543.png" alt="Level{5,4,3}">
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="b-dics">
+            <img src="./static/images/high_levels/stump_level5.png" alt="Nope-NeRF [Bian 2022]">
+            <img src="./static/images/high_levels/stump_level543.png" alt="Ours">
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="b-dics">
+            <img src="./static/images/high_levels/garden_level5.png" alt="Nope-NeRF [Bian 2022]">
+            <img src="./static/images/high_levels/garden_level543.png" alt="Ours">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- test - Level5 vs Level{5,4,3} -->
@@ -576,6 +615,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <!-- tes - Vis Comparison -->

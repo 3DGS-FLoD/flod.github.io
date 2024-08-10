@@ -424,3 +424,8 @@ body {
   font-weight: 500;
   text-decoration: none;
 }
+
+.b-dics img {
+  width: 100%;
+  display: block;
+}
