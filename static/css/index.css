@@ -276,7 +276,7 @@ body {
   border: 2px solid #fff;
   border-radius: 1000px;
   z-index: 20;
-  pointer-events: none;
+  pointer-events: auto;
   box-shadow: 0 0 10px rgb(12, 12, 12);
 }
 
