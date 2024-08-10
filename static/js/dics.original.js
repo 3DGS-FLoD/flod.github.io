@@ -640,4 +640,72 @@ let defaultOptions = {
       return Object.prototype.toString.call(object).slice(8, -1);
     }
   };
+
+  // 기존 dics.original.js 코드 ...
+
+document.addEventListener('DOMContentLoaded', function () {
+  function initComparisons() {
+      var slidercustoms = document.querySelectorAll('.comparison-slider');
+      slidercustoms.forEach(function (slidercustom) {
+          var images = slidercustom.querySelectorAll('.b-dics img');
+          if (images.length === 2) {
+              var img1 = images[0];
+              var img2 = images[1];
+
+              // Set width of the second image
+              img2.style.width = "50%";
+              img2.style.position = "absolute";
+              img2.style.top = "0";
+              img2.style.left = "0";
+              img2.style.height = "100%";
+              img2.style.clipPath = "inset(0 50% 0 0)";
+              img2.style.transition = "clip-path 0.5s ease";
+
+              // Create a slider element
+              var sliderHandle = document.createElement('div');
+              sliderHandle.style.width = "5px";
+              sliderHandle.style.height = "100%";
+              sliderHandle.style.backgroundColor = "#ffffff";
+              sliderHandle.style.position = "absolute";
+              sliderHandle.style.top = "0";
+              sliderHandle.style.left = "50%";
+              sliderHandle.style.cursor = "ew-resize";
+              sliderHandle.style.zIndex = "10";
+              slidercustom.appendChild(sliderHandle);
+
+              var containerRect = slidercustom.getBoundingClientRect();
+              var dragging = false;
+
+              sliderHandle.addEventListener('mousedown', function (e) {
+                  dragging = true;
+              });
+
+              window.addEventListener('mouseup', function (e) {
+                  dragging = false;
+              });
+
+              slidercustom.addEventListener('mousemove', function (e) {
+                  if (!dragging) return;
+
+                  var offsetX = e.clientX - containerRect.left;
+                  var sliderWidth = containerRect.width;
+                  var percentage = (offsetX / sliderWidth) * 100;
+
+                  if (percentage < 0) percentage = 0;
+                  if (percentage > 100) percentage = 100;
+
+                  sliderHandle.style.left = percentage + "%";
+                  img2.style.clipPath = "inset(0 " + (100 - percentage) + "% 0 0)";
+              });
+
+              window.addEventListener('resize', function () {
+                  containerRect = slidercustom.getBoundingClientRect();
+              });
+          }
+      });
+  }
+
+  initComparisons();
+});
+
   
