@@ -424,3 +424,33 @@ body {
   font-weight: 500;
   text-decoration: none;
 }
+
+
+.independent-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensure that the images don't spill out */
+  height: auto; /* Adjust to fit the content */
+  max-height: 400px; /* Optional: Set a max height for consistency */
+}
+
+.independent-slider img {
+  width: 100%; /* Make sure images scale to the container width */
+  display: block; /* Remove any default inline spacing */
+  position: absolute; /* Required for the sliding effect */
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.independent-slider img:nth-child(2) {
+  opacity: 0;
+}
+
+.independent-slider.active img:nth-child(2) {
+  opacity: 1;
+}
+
+.independent-slider.active img:nth-child(1) {
+  opacity: 0;
+}
