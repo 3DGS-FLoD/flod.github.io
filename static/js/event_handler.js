@@ -83,6 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
             textPosition: "bottom"
         });
     }
+
+    const independentSliders = document.querySelectorAll('.independent-slider');
+
+    independentSliders.forEach(function(slider) {
+    new Dics({
+      container: slider,
+      hideTexts: false,
+      textPosition: "bottom",
+      // linesOrientation: 'horizontal', 
+      // linesColor: '#FFFFFF'
+    });
+  });
 });
 
 function objectSceneEvent(idx) {

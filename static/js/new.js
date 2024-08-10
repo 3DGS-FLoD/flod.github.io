@@ -1,16 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const independentSliders = document.querySelectorAll('.independent-slider');
+// document.addEventListener('DOMContentLoaded', function() {
+//   const independentSliders = document.querySelectorAll('.independent-slider');
 
-  independentSliders.forEach(function(slider) {
-    new Dics({
-      container: slider,
-      hideTexts: false,
-      textPosition: "bottom",
-      linesOrientation: 'horizontal', // Default or change as needed
-      linesColor: '#FFFFFF' // Optional: Set the color of the slider line
-    });
-  });
-});
+//   independentSliders.forEach(function(slider) {
+//     new Dics({
+//       container: slider,
+//       hideTexts: false,
+//       textPosition: "bottom",
+//       // linesOrientation: 'horizontal', 
+//       // linesColor: '#FFFFFF'
+//     });
+//   });
+// });
 
 
 // document.addEventListener('DOMContentLoaded', function() {
