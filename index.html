@@ -283,12 +283,14 @@
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Visualization for each Level</h2>
       <div class="content has-text-justified">
-        <p></p>
+        <p>
+          Our method maintains the overall structure while providing level-appropriate details across each level.
+        </p>
       </div>
 
       <!-- Flexbox를 사용하여 중앙에 정렬 -->
       <div class="content-wrapper" style="display: flex; justify-content: center;">
-        <div class="content" style="width: 80%;">
+        <div class="content" style="width: 70%;">
           <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
             <li class="nav-item">
               <a class="nav-link active" onclick="objectSceneEvent(0)">Train</a>
@@ -330,10 +332,10 @@
 <section class="section">
   <div class="container ">
     <div class=" has-text-centered">
-      <h2 class="title is-3">Level5 vs Level(5,4,3)</h2>
+      <h2 class="title is-3">Selective Rendering</h2>
       <div class="content has-text-justified">
-        <p>
-
+        <p style="text-align: center;">
+          Selecive rendering using levels 3, 4, and 5 achieves visual quality comparable to using only level 5, while reducing the number of Gaussians by 40%.
         </p>
       </div>
       <div class="columns is-centered">
@@ -463,7 +465,7 @@
       <h2 class="title is-3">Visual Comparisons</h2>
       <div class="content has-text-justified">
         <p>
-
+          Comparison of the rendering results of Level5 and other models.
         </p>
       </div>
       <div class="columns is-centered">
@@ -587,147 +589,6 @@
 
 
 <script src="./static/js/new.js"></script>
-
-<!-- Low-mid level comparison -->
-<!-- <section class="section">
-  <div class="container">
-    <div class=" has-text-centered">
-      <h2 class="title is-3">Low-Mid Level Comparisons</h2>
-      <div class="content has-text-justified">
-        <p>
-
-        </p>
-      </div>
-
-      <div id="results-carousel" class=" carousel results-carousel">
-        <div id="slider70672b9c-2b94-4024-83f5-2dccf61eb23a" class="slider" tabindex="0">
-              <div class="slider-container" style="opacity: 1; width: 15795px; transition: none; transform: translate3d(-2545.5px, 0px, 0px);"><div class="slider-item" data-slider-index="-5" data-cloned="true" style="width: 585px;"><div class="item item-counter">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="0">
-                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 585px;"><div class="item item-kitchen">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="1">
-                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 585px;"><div class="item item-train">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="2">
-                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 585px;"><div class="item item-struck">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="3">
-                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 585px;"><div class="item item-stump">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="4">
-                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item is-current" data-slider-index="0" style="width: 585px;"><div class="item item-room">
-                      <video poster="" id="room" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="5">
-                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item is-slide-previous is-slide-next" data-slider-index="1" style="width: 585px;"><div class="item item-garden">
-                      <video poster="" id="garden" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="6">
-                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="2" style="width: 585px;"><div class="item item-bicycle">
-                      <video poster="" id="bicycle" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="7">
-                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="3" style="width: 585px;"><div class="item item-bonsai">
-                      <video poster="" id="bonsai" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="8">
-                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="4" style="width: 585px;"><div class="item item-counter">
-                      <video poster="" id="counter" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="9">
-                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="5" style="width: 585px;"><div class="item item-kitchen">
-                      <video poster="" id="kitchen" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="10">
-                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="6" style="width: 585px;"><div class="item item-train">
-                    <video poster="" id="train" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="11">
-                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="7" style="width: 585px;"><div class="item item-struck">
-                    <video poster="" id="toby" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="12">
-                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="8" style="width: 585px;"><div class="item item-stump">
-                    <video poster="" id="stump" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="13">
-                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="9" data-cloned="true" style="width: 585px;"><div class="item item-room">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="14">
-                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="10" data-cloned="true" style="width: 585px;"><div class="item item-garden">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="15">
-                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="11" data-cloned="true" style="width: 585px;"><div class="item item-bicycle">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="16">
-                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="12" data-cloned="true" style="width: 585px;"><div class="item item-bonsai">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="17">
-                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="13" data-cloned="true" style="width: 585px;"><div class="item item-counter">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="18">
-                        <source src="./static/videos/counter_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="14" data-cloned="true" style="width: 585px;"><div class="item item-kitchen">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="19">
-                        <source src="./static/videos/kitchen_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="15" data-cloned="true" style="width: 585px;"><div class="item item-train">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="20">
-                      <source src="./static/videos/train_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="16" data-cloned="true" style="width: 585px;"><div class="item item-struck">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="21">
-                      <source src="./static/videos/truck_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="17" data-cloned="true" style="width: 585px;"><div class="item item-stump">
-                    <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="22">
-                      <source src="./static/videos/stump_video_comp3.mp4" type="video/mp4">
-                    </video>
-                  </div></div><div class="slider-item" data-slider-index="18" data-cloned="true" style="width: 585px;"><div class="item item-room">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="23">
-                        <source src="./static/videos/room_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="19" data-cloned="true" style="width: 585px;"><div class="item item-garden">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="24">
-                        <source src="./static/videos/garden_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="20" data-cloned="true" style="width: 585px;"><div class="item item-bicycle">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="25">
-                        <source src="./static/videos/bicycle_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div><div class="slider-item" data-slider-index="21" data-cloned="true" style="width: 585px;"><div class="item item-bonsai">
-                      <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%" data-video="26">
-                        <source src="./static/videos/bonsai_video_comp3.mp4" type="video/mp4">
-                      </video>
-                    </div></div>
-              </div>
-              <div class="slider-navigation-previous">
-                <svg viewBox="0 0 50 80" xml:space="preserve">
-                  <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
-                </svg>
-              </div>
-              <div class="slider-navigation-next">
-                <svg viewBox="0 0 50 80" xml:space="preserve">
-                  <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
-                </svg>
-              </div>
-            <div class="slider-pagination"><div class="slider-page" data-index="0"></div><div class="slider-page" data-index="1"></div><div class="slider-page" data-index="2"></div><div class="slider-page" data-index="3"></div><div class="slider-page" data-index="4"></div><div class="slider-page" data-index="5"></div><div class="slider-page" data-index="6"></div><div class="slider-page" data-index="7"></div><div class="slider-page" data-index="8"></div></div>
-          </div>
-        </div>
-      <p>The caption displays both the file size and the Structural Similarity Index (SSIM)</p>
-    </div>
-  </div>
-</section> -->
 
 
 
