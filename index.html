@@ -34,7 +34,6 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   
-  <!-- <link rel="stylesheet" href="styles.css?v=1.0"> -->
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,54 +41,12 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <!-- <script src="./static/js/new.js"></script> -->
 
   <link rel="stylesheet" href="./static/css/dics.original.css">
   <script src="./static/js/dics.original.js"></script>
   <script src="./static/js/event_handler.js"></script>
-  <!-- <script src="./static/js/new.js"></script> -->
 </head>
 <body>
-
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav> -->
 
 
 <section class="hero">
@@ -186,7 +143,7 @@
 
 
 <!-- demo video -->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
 
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
@@ -195,34 +152,16 @@
       </video>
 
       <div class="text-container">
-        <!-- <p style="font-size:22px; width: 95%; margin: auto;"> -->
         <p>
           Our method enables customizable and memory-efficient rendering across various hardware configurations.
         </p>  
       </div>
     </div>
   </div>
-
-</section>
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
 </section> -->
 
-
-<!-- <section class="hero is-light is-small">
+<!-- demo video -->
+<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -275,9 +214,12 @@
           </video>
         </div>
       </div>
+      <p style="text-align: center;">
+        Our method enables customizable and memory-efficient rendering across various hardware configurations.
+      </p>  
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- Abstract. -->
 <section class="section">
@@ -296,7 +238,7 @@
             While existing 3DGSs with LoD focus on detailed reconstruction, our method provides reconstructions using a small number of Gaussians for reduced memory requirements, and a larger number of Gaussians for greater detail.
           </p>
           <p>
-            Empirical results demonstrate that our method provides various rendering options with tradeoffs between rendering quality and memory usage, thereby allowing real-time rendering across different memory constraints.
+            Empirical results demonstrate that our method <b>provides various rendering options with tradeoffs between rendering quality and memory usage</b>, thereby allowing real-time rendering across different memory constraints.
             Furthermore, we show that our method generalizes to different 3DGS frameworks, indicating its potential for integration into future state-of-the-art developments. 
           </p>
         </div>
@@ -312,7 +254,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/method.png">
+          <p></p>
+        </div>
+        <div class="content has-text-justified">
+          <img src="./static/images/method.png" style="margin-bottom: 10px; margin-top:10px;">
 
           <p>
             Training starts at level 1 with the given SfM points and proceeds to the maximum level. 
@@ -324,6 +269,7 @@
           </p>
 
         </div>
+
       </div>
     </div>
 
@@ -365,11 +311,11 @@
           </ul>
 
           <div class="b-dics level-visualization" style="font-weight: 600;">
-            <img src="./static/images/all_levels/train_Level1.png" alt="Lev1">
-            <img src="./static/images/all_levels/train_Level2.png" alt="Lev2">
-            <img src="./static/images/all_levels/train_Level3.png" alt="Lev3">
-            <img src="./static/images/all_levels/train_Level4.png" alt="Lev4">
-            <img src="./static/images/all_levels/train_Level5.png" alt="Lev5">
+            <img src="./static/images/all_levels/train_Level1.png" alt="Level1">
+            <img src="./static/images/all_levels/train_Level2.png" alt="Level2">
+            <img src="./static/images/all_levels/train_Level3.png" alt="Level3">
+            <img src="./static/images/all_levels/train_Level4.png" alt="Level4">
+            <img src="./static/images/all_levels/train_Level5.png" alt="Level5">
           </div>
         </div>
       </div>
@@ -384,7 +330,7 @@
 <section class="section">
   <div class="container ">
     <div class=" has-text-centered">
-      <h2 class="title is-3">Level5 vs Level{5,4,3}</h2>
+      <h2 class="title is-3">Level5 vs Level(5,4,3)</h2>
       <div class="content has-text-justified">
         <p>
 
@@ -408,7 +354,7 @@
                     <div class="bal-before-inset">
                       <img src="./static/images/high_levels/train_level543.png">
                       <div class="bal-beforePosition beforeLabel">
-                        Level{5,4,3}
+                        Level(5,4,3)
                       </div>
                     </div>
                   </div>
@@ -466,7 +412,7 @@
                   <div class="bal-before-inset">
                     <img src="./static/images/high_levels/stump_level543.png">
                     <div class="bal-beforePosition beforeLabel">
-                      Level{5,4,3}
+                      Level(5,4,3)
                     </div>
                   </div>
                 </div>
@@ -554,7 +500,7 @@
                 <div id="viscomp2" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/vis_level5/9df87_level5.png">
+                    <img src="./static/images/vis_level5/9f518d_level5.png">
                     <div class="bal-afterPosition afterLabel" style="z-index:1;">
                       Ours
                     </div>
@@ -640,385 +586,7 @@
 </section>
 
 
-
-
-<!-- tes - Vis Comparison -->
-<!-- <section class="section">
-  <div class="container ">
-    <div class="has-text-centered">
-      <h2 class="title is-3">test - Vis Comparison</h2>
-      <div class="content has-text-justified">
-        <p></p>
-      </div>
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div class="comparison-container">
-                  <div id="competitor1" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/vis_level5/train_3dgs.png" alt="3DGS">
-                      <img src="./static/images/vis_level5/train_level5.png" alt="Ours">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="comparison-container">
-                 <div id="competitor2" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/vis_level5/9f518d_mip.png" alt="Mip-Splattng">
-                      <img src="./static/images/vis_level5/9f518d_level5.png" alt="Ours">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div class="comparison-container">
-                  <div id="competitor3" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/vis_level5/aeb335_scaffold.png" alt="Scaffold-GS">
-                      <img src="./static/images/vis_level5/aeb335_level5.png" alt="Ours">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="comparison-container">
-                  <div id="competitor4" class="comparison-slider">
-                    <div class="b-dics">
-                      <img src="./static/images/vis_level5/kitchen_octree.png" alt="Octree-GS">
-                      <img src="./static/images/vis_level5/kitchen_level5.png" alt="Ours">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-
-<!-- visual comparsion level5 -->
-<!-- <section class="section">
-  <div class="container ">
-    <div class=" has-text-centered">
-      <h2 class="title is-3">Visual Comparisons</h2>
-      <div class="content has-text-justified">
-        <p>
-
-        </p>
-      </div>
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div id="example5" class="bal-container-small">
-
-                  <div class="bal-after">
-                    <img src="./static/images/vis_level5/train_level5.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:93.03030303030303%;">
-                    <div class="bal-before-inset" style="width: 660px;">
-                      <img src="./static/images/vis_level5/train_3dgs.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        3DGS
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:93.03030303030303%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
-                </div>
-
-
-                <div id="example6" class="bal-container-small">
-
-                  <div class="bal-after">
-                    <img src="./static/images/vis_level5/9f518d_level5.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:75.45454545454545%;">
-                    <div class="bal-before-inset" style="width: 660px;">
-                      <img src="./static/images/vis_level5/9f518d_mip.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        Mip-Splattng
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:75.45454545454545%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="column">
-          <div class="columns is-centered">
-            <div class="column content">
-
-              <div id="example7" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/vis_level5/aeb335_level5.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Ours
-                  </div>
-                </div>
-
-                <div class="bal-before" style="width:97.21030042918454%;">
-                  <div class="bal-before-inset" style="width: 660px;">
-                    <img src="./static/images/vis_level5/aeb335_scaffold.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Scaffold-GS
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bal-handle" style="left:97.21030042918454%;">
-                  <span class=" handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-
-              </div>
-
-              <div id="example8" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/vis_level5/kitchen_level5.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Ours
-                  </div>
-                </div>
-
-                <div class="bal-before" style="width:34.39393939393939%;">
-                  <div class="bal-before-inset" style="width: 466px;">
-                    <img src="./static/images/vis_level5/kitchen_octree.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Octree-GS
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bal-handle" style="left:34.39393939393939%;">
-                  <span class=" handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- Low-mid level comparison -->
-<!-- tmp -->
-<!-- <section class="section">
-  <div class="container ">
-    <div class=" has-text-centered">
-      <h2 class="title is-3">Low-Mid Level Comparison</h2>
-      <div class="content has-text-justified">
-        <p>
-
-        </p>
-      </div>
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
-                <div id="example10" class="bal-container-small">
-
-                  <div class="bal-after">
-                    <img src="./static/images/vis_level5/train_level5.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:93.03030303030303%;">
-                    <div class="bal-before-inset" style="width: 660px;">
-                      <img src="./static/images/vis_level5/train_3dgs.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        3DGS
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:93.03030303030303%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
-                </div>
-
-
-                <div id="example11" class="bal-container-small">
-
-                  <div class="bal-after">
-                    <img src="./static/images/vis_level5/9f518d_level5.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:75.45454545454545%;">
-                    <div class="bal-before-inset" style="width: 660px;">
-                      <img src="./static/images/vis_level5/9f518d_mip.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        Mip-Splattng
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:75.45454545454545%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="column">
-          <div class="columns is-centered">
-            <div class="column content">
-
-              <div id="example12" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/vis_level5/aeb335_level5.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Ours
-                  </div>
-                </div>
-
-                <div class="bal-before" style="width:97.21030042918454%;">
-                  <div class="bal-before-inset" style="width: 660px;">
-                    <img src="./static/images/vis_level5/aeb335_scaffold.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Scaffold-GS
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bal-handle" style="left:97.21030042918454%;">
-                  <span class=" handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-
-              </div>
-
-              <div id="example13" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/vis_level5/kitchen_level5.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    Ours
-                  </div>
-                </div>
-
-                <div class="bal-before" style="width:34.39393939393939%;">
-                  <div class="bal-before-inset" style="width: 466px;">
-                    <img src="./static/images/vis_level5/kitchen_octree.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Octree-GS
-                    </div>
-                  </div>
-                </div>
-
-                <div class="bal-handle" style="left:34.39393939393939%;">
-                  <span class=" handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <script src="./static/js/new.js"></script>
-<!-- <script>
-  new BeforeAfter({
-    id: 'example1'
-  });
-  new BeforeAfter({
-    id: 'example2'
-  });
-  new BeforeAfter({
-    id: 'example3'
-  });
-  new BeforeAfter({
-    id: 'example4'
-  });
-
-  new BeforeAfter({
-    id: 'example5'
-  });
-  new BeforeAfter({
-    id: 'example6'
-  });
-  new BeforeAfter({
-    id: 'example7'
-  });
-  new BeforeAfter({
-    id: 'example8'
-  });
-
-  new BeforeAfter({
-    id: 'example10'
-  });
-  new BeforeAfter({
-    id: 'example11'
-  });
-  new BeforeAfter({
-    id: 'example12'
-  });
-  new BeforeAfter({
-    id: 'example13'
-  });
-
-</script> -->
-
 
 <!-- Low-mid level comparison -->
 <!-- <section class="section">

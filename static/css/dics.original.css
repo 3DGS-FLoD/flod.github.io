@@ -5,6 +5,7 @@
     overflow  : hidden;
     display   : flex;
     opacity   : 0;
+    border-radius: 10px;
   }
   
   .b-dics__section {
@@ -20,19 +21,21 @@
     position       : absolute;
     top            : 0;
     left           : 50%;
-    padding        : 5px 25px;
+    padding        : 1px 10px;
     transform      : translateX(-50%);
-    background     : #FFFFFF;
+    background     : #000;
     z-index        : 11;
     font-family    : Arial, serif;
-    color          : #3d3d3d;
+    color          : #fff;
     user-select    : none;
-    font-size      : 13px;
+    font-size      : 1em;
     text-align     : center;
     margin         : 16px 0;
     white-space    : nowrap;
-    opacity        : .7;
+    opacity        : 1.;
     pointer-events : none;
+    border-radius  : 0.2em; /* 모서리를 둥글게 만듭니다 */
+    font-weight    : 500; /* 폰트를 얇게 설정 */
   }
   
   .b-dics__image-container {
@@ -66,7 +69,7 @@
     z-index      : 1;
     touch-action : none;
     line-height  : normal;
-    opacity      : .7;
+    opacity      : 1.;
   }
   
   .b-dics__slider:before {
@@ -94,8 +97,9 @@
     top              : 0;
     transform        : translateX(-50%);
     height           : 100%;
-    width            : 3px;
+    width            : 2px;
     background-color : currentColor;
+    box-shadow: 0 0 10px rgb(12, 12, 12);
     z-index          : 1;
   }
   
