@@ -54,6 +54,7 @@
     transform   : translateY(-50%);
     user-select : none;
     max-width   : none;
+    object-fit  : cover; 
   }
   
   .b-dics__slider {
