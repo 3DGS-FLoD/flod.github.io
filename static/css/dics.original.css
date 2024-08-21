@@ -34,8 +34,8 @@
     white-space    : nowrap;
     opacity        : 1.;
     pointer-events : none;
-    border-radius  : 0.2em; /* 모서리를 둥글게 만듭니다 */
-    font-weight    : 500; /* 폰트를 얇게 설정 */
+    border-radius  : 0.2em; 
+    font-weight    : 500;
   }
   
   .b-dics__image-container {
@@ -112,9 +112,6 @@
     opacity : 1;
   }
   
-  /* Text Position
-   ****************************************************************************/
-  
   .b-dics--tp-center .b-dics__text {
     top       : 50%;
     transform : translate(-50%, -50%);
@@ -142,9 +139,6 @@
     margin    : 0 16px;
   }
   
-  /* Hide texts
-   ****************************************************************************/
-  
   .b-dics--hide-texts .b-dics__text {
     background : #ffffff;
     opacity    : 0;
@@ -153,9 +147,6 @@
   .b-dics--hide-texts .b-dics__image-container:hover .b-dics__text {
     opacity : 1;
   }
-  
-  /* Vertical Sliders
-   ****************************************************************************/
   
   .b-dics--vertical {
     flex-direction : column;

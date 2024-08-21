@@ -307,25 +307,20 @@ body {
 
 .handle-left-arrow,
 .handle-right-arrow {
-  width: 26px;  /* SVG 화살표의 크기 조정 */
+  width: 26px; 
   height: 24px;
   position: absolute;
   /* top: 50%; */
   transform: translateY(-50%);
 }
 
-/* .handle-left-arrow {
-  border-right: 6px solid #fff;
-  left: 50%;
-  margin-left: -17px;
-} */
 
 .handle-left-arrow {
-  left: 8px; /* 왼쪽 화살표 위치 */
+  left: 8px; 
   -webkit-mask: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNGRkZGRkY7ZW5hYmxlLWJhY2tncm91bmQ6bmV3ICAgIDt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTgwLjIsMTA4LjFsNjEuNy02Mi4yYzMuOC0zLjgsOC44LTUuOSwxNC4xLTUuOWM1LjMsMCwxMC40LDIuMSwxNC4xLDUuOWw2MS43LDYyLjJjMy45LDMuOSw5LjEsNS45LDE0LjIsNS45czEwLjItMS45LDE0LjEtNS44YzcuOC03LjgsNy45LTIwLjQsMC4xLTI4LjNsLTYxLjctNjIuMkMyODcuMiw2LjMsMjcyLjEsMCwyNTYsMHMtMzEuMiw2LjMtNDIuNSwxNy44TDE1MS44LDgwYy03LjgsNy44LTcuNywyMC41LDAuMSwyOC4zQzE1OS44LDExNiwxNzIuNCwxMTUuOSwxODAuMiwxMDguMXoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzMxLjgsNDAzLjlsLTYxLjcsNjIuMmMtMy44LDMuOC04LjgsNS45LTE0LjEsNS45Yy01LjMsMC0xMC40LTIuMS0xNC4xLTUuOWwtNjEuNy02Mi4yYy03LjgtNy44LTIwLjQtNy45LTI4LjMtMC4xYy03LjgsNy44LTcuOSwyMC40LTAuMSwyOC4zbDYxLjcsNjIuMmMxMS40LDExLjQsMjYuNSwxNy44LDQyLjUsMTcuOHMzMS4yLTYuMyw0Mi41LTE3LjhsNjEuNy02Mi4yYzcuOC03LjgsNy43LTIwLjUtMC4xLTI4LjNDMzUyLjIsMzk2LDMzOS42LDM5Ni4xLDMzMS44LDQwMy45eiIvPjwvc3ZnPg==) no-repeat 100% 100%;
   mask: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNGRkZGRkY7ZW5hYmxlLWJhY2tncm91bmQ6bmV3ICAgIDt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTgwLjIsMTA4LjFsNjEuNy02Mi4yYzMuOC0zLjgsOC44LTUuOSwxNC4xLTUuOWM1LjMsMCwxMC40LDIuMSwxNC4xLDUuOWw2MS43LDYyLjJjMy45LDMuOSw5LjEsNS45LDE0LjIsNS45czEwLjItMS45LDE0LjEtNS44YzcuOC03LjgsNy45LTIwLjQsMC4xLTI4LjNsLTYxLjctNjIuMkMyODcuMiw2LjMsMjcyLjEsMCwyNTYsMHMtMzEuMiw2LjMtNDIuNSwxNy44TDE1MS44LDgwYy03LjgsNy44LTcuNywyMC41LDAuMSwyOC4zQzE1OS44LDExNiwxNzIuNCwxMTUuOSwxODAuMiwxMDguMXoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzMxLjgsNDAzLjlsLTYxLjcsNjIuMmMtMy44LDMuOC04LjgsNS45LTE0LjEsNS45Yy01LjMsMC0xMC40LTIuMS0xNC4xLTUuOWwtNjEuNy02Mi4yYy03LjgtNy44LTIwLjQtNy45LTI4LjMtMC4xYy03LjgsNy44LTcuOSwyMC40LTAuMSwyOC4zbDYxLjcsNjIuMmMxMS40LDExLjQsMjYuNSwxNy44LDQyLjUsMTcuOHMzMS4yLTYuMyw0Mi41LTE3LjhsNjEuNy02Mi4yYzcuOC03LjgsNy43LTIwLjUtMC4xLTI4LjNDMzUyLjIsMzk2LDMzOS42LDM5Ni4xLDMzMS44LDQwMy45eiIvPjwvc3ZnPg==) no-repeat 100% 100%;
   background-color: #fff;
-  transform: rotate(-90deg); /* 원래 방향으로 돌리기 위해 -90도 회전 */
+  transform: rotate(-90deg);
 }
 
 
@@ -364,53 +359,8 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 20px; /* 슬라이더 간의 간격을 위해 추가 */
+  margin-bottom: 20px;
 }
-/* 
-.comparison-image img,
-.comparison-overlay img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.comparison-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  overflow: hidden;
-}
-
-.comparison-overlay img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  transform: translateX(-50%);
-}
-
-.slider {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-} */
 
 .comparison-container {
   position: relative;
@@ -421,7 +371,6 @@ body {
   margin: 5px;
 }
 
-/* Style the buttons that are used to open the tab content */
 .nav-item {
   overflow: hidden;
   text-align: center;
@@ -436,12 +385,10 @@ body {
   border-top-left-radius: 10px;
 }
 
-/* Change background color of buttons on hover */
 .nav-item:hover {
   background-color: #c7dc94;
 }
 
-/* Create an active/current tablink class */
 .nav-tabs .nav-link.active {
   background-color: #5c7f17;
   color:white;
@@ -462,15 +409,15 @@ body {
 .independent-slider {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Ensure that the images don't spill out */
-  height: auto; /* Adjust to fit the content */
-  max-height: 400px; /* Optional: Set a max height for consistency */
+  overflow: hidden; 
+  height: auto; 
+  max-height: 400px;
 }
 
 .independent-slider img {
-  width: 100%; /* Make sure images scale to the container width */
-  display: block; /* Remove any default inline spacing */
-  position: absolute; /* Required for the sliding effect */
+  width: 100%; 
+  display: block;
+  position: absolute;
   top: 0;
   left: 0;
   transition: opacity 0.5s ease-in-out;
