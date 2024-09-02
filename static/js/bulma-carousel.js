@@ -567,7 +567,7 @@ var bulmaCarousel = function (_EventEmitter) {
       this._swipe = new __WEBPACK_IMPORTED_MODULE_10__components_swipe__["a" /* default */](this);
 
       this._build();
-
+	  window.addEventListener('resize', this._setDimensions.bind(this));
       if (Object(__WEBPACK_IMPORTED_MODULE_2__utils_type__["a" /* isFunction */])(this.options.onReady)) {
         this.options.onReady(this);
       }
@@ -1136,7 +1136,10 @@ var Autoplay = function (_EventEmitter) {
 			if (document.hidden) {
 				this.stop();
 			} else {
-				this.start();
+				if (index === centerIndex) {
+                    this.start(); } else {
+						this.stop()
+					}
 			}
 		}
 	}, {
@@ -2327,16 +2330,16 @@ var defaultOptions = {
   pauseOnHover: true,
   breakpoints: [{
     changePoint: 480,
-    slidesToShow: 1,
+    slidesToShow: 1.1,
     slidesToScroll: 1
   }, {
     changePoint: 640,
-    slidesToShow: 2,
-    slidesToScroll: 2
+    slidesToShow: 1.2,
+    slidesToScroll: 1
   }, {
     changePoint: 768,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 1.3,
+    slidesToScroll: 1
   }],
 
   onReady: null,

@@ -12,11 +12,12 @@ $(document).ready(function() {
 
     var options = {
 			slidesToScroll: 1,
-			slidesToShow: 3,
+			slidesToShow: 1.3,
 			loop: true,
 			infinite: true,
 			autoplay: false,
 			autoplaySpeed: 3000,
+      centerMode: true
     }
 
 		// Initialize all div with carousel class
