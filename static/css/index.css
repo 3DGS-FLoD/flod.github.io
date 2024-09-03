@@ -112,6 +112,7 @@ body {
 
 .results-carousel {
   overflow: hidden;
+  align-items: center;
 }
 
 .results-carousel .item {
@@ -126,7 +127,6 @@ body {
 .results-carousel video {
   margin: 0;
 }
-
 
 .interpolation-panel {
   background: #f5f5f5;
@@ -404,7 +404,6 @@ body {
   font-weight: 500;
   text-decoration: none;
 }
-
 
 .independent-slider {
   position: relative;
